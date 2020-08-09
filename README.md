@@ -1,39 +1,42 @@
 # Producer-Consumer-Problem
 Producer-Consumer-Problem
 
-Producer-Consumer is a kind of design pattern where
-a. Both producer and consumer can work at different spreed.
-b. One doesn't need to know about the existance of other.
-c. Separating producer and consumer results in a cleaner and more redable code.
+Producer-Consumer is a kind of design pattern where <br />
+a. Both producer and consumer can work at different spreed. <br />
+b. One doesn't need to know about the existance of other. <br />
+c. Separating producer and consumer results in a cleaner and more redable code. <br />
 d. Easy to manage both.
 
 ## Psudeo code of producer and consumer problem with sempahore
 
-Sempahore full = 0;
-Sempahore empty = n;
-Sempahore mutex = 1;
+Sempahore full = 0; <br />
+Sempahore empty = n; <br />
+Sempahore mutex = 1; <br />
 
 Producer()
 ==============
+```
 void Producer() {
 	int itemp;
-	
+
 	while(true) {
 	produce(itemp);
-	
+
 	wait(empty);
 	wait(mutex);
-	
+
 	Buffer[in] = temp;
 	in = (in + 1) % n;
-	
+
 	signal(mutex);
 	signal(full);
 	}
 }
+```
 
 Consumer()
 ====================
+```
 void Consumer() {
 	int itempc;
 	
@@ -51,7 +54,10 @@ void Consumer() {
 	consume(itempc);
 	}
 }
+```
+## Java code 
 
+```
 package com.demo;
 
 class Sempahore {
@@ -170,5 +176,6 @@ public class ProducerConsumerDemo {
         System.out.println("Terminated succesfully!");
     }
 }
+```
 
 
